@@ -1,6 +1,34 @@
 import "./App.css";
+import { useEffect, useRef } from "react";
 
 function App() {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+
+    if (!hero || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return undefined;
+    }
+
+    let frameId;
+
+    const updateParallax = () => {
+      frameId = window.requestAnimationFrame(() => {
+        const offset = Math.min(window.scrollY * 0.12, 72);
+        hero.style.setProperty("--parallax-offset", `${offset}px`);
+      });
+    };
+
+    window.addEventListener("scroll", updateParallax, { passive: true });
+    updateParallax();
+
+    return () => {
+      window.removeEventListener("scroll", updateParallax);
+      window.cancelAnimationFrame(frameId);
+    };
+  }, []);
+
   return (
     <div className="profile">
 
@@ -15,7 +43,7 @@ function App() {
       </header>
 
       {/* Hero */}
-      <section className="hero">
+      <section ref={heroRef} className="hero">
         <div>
           <p className="small-text">HELLO, I'M</p>
 
