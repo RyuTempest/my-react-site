@@ -155,7 +155,7 @@ function App() {
         </p>
 
         <div className="contact-links">
-          <a href="mailto:your-email@example.com">
+          <a href="avilarayrafael8@gmail.com">
             Email
           </a>
 
