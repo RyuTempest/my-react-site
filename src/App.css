@@ -9,9 +9,9 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #eef2f6;
-  color: #222;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #edf4fa;
+  color: #0d1b2a;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
 }
 
 a {
@@ -19,7 +19,7 @@ a {
 }
 
 a:focus-visible {
-  outline: 3px solid #f0a500;
+  outline: 3px solid #4aa3df;
   outline-offset: 3px;
 }
 
@@ -28,15 +28,16 @@ a:focus-visible {
 }
 
 .navbar {
+  display: flex;
+  justify-content: flex-end;
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 14px 8%;
-  border-bottom: 1px solid #dce2e8;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 2px 10px rgba(30, 50, 70, 0.05);
+  padding: 15px max(6%, calc((100% - 1100px) / 2));
+  border-bottom: 1px solid #cfdeea;
+  background: rgba(247, 251, 255, 0.95);
+  box-shadow: 0 4px 18px rgba(13, 43, 72, 0.08);
   backdrop-filter: blur(8px);
-  text-align: right;
 }
 
 .navbar nav {
@@ -47,20 +48,26 @@ a:focus-visible {
 .navbar nav a {
   padding: 8px 10px;
   border-radius: 6px;
-  color: #555;
+  color: #425466;
   font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
 }
 
 .navbar nav a:hover {
-  background: #eef6fb;
-  color: #1769aa;
+  background: #e5f0f8;
+  color: #1261a0;
 }
 
 .hero {
-  padding: 104px 8% 92px;
-  border-bottom: 1px solid #dce2e8;
-  background: #fafdff;
+  position: relative;
+  overflow: hidden;
+  padding: 124px max(6%, calc((100% - 1100px) / 2)) 108px;
+  border-bottom: 1px solid #cfdeea;
+  background-color: #f7fbff;
+  background-image: radial-gradient(#b8d2e5 0.8px, transparent 0.8px);
+  background-position: right 13% top 28%;
+  background-size: 18px 18px;
 }
 
 .hero > div {
@@ -70,7 +77,7 @@ a:focus-visible {
 .small-text,
 .section-label {
   margin: 0 0 12px;
-  color: #1769aa;
+  color: #1261a0;
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -78,21 +85,23 @@ a:focus-visible {
 
 .hero h2 {
   margin: 0 0 16px;
-  color: #111;
+  color: #0d1b2a;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(48px, 7vw, 76px);
+  font-weight: 700;
   line-height: 1;
 }
 
 .hero h3 {
   margin: 0 0 18px;
-  color: #444;
+  color: #425466;
   font-size: 24px;
   font-weight: normal;
 }
 
 .intro {
   max-width: 620px;
-  color: #555;
+  color: #425466;
   font-size: 17px;
   line-height: 1.7;
 }
@@ -141,49 +150,52 @@ a:focus-visible {
 .button {
   display: inline-block;
   padding: 12px 18px;
-  border: 1px solid #1769aa;
-  border-radius: 8px;
-  background: #1769aa;
+  border: 1px solid #1261a0;
+  border-radius: 4px;
+  background: #1261a0;
   color: #fff;
   font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .button:hover {
-  background: #125587;
+  border-color: #0b4778;
+  background: #0b4778;
   transform: translateY(-2px);
 }
 
 .button.secondary {
-  background: #fff;
-  color: #1769aa;
+  background: transparent;
+  color: #1261a0;
 }
 
 .button.secondary:hover {
-  background: #eef6fb;
+  background: #e5f0f8;
 }
 
 .section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 88px 8%;
+  padding: 96px max(6%, 40px);
 }
 
 .section + .section {
-  border-top: 1px solid #dce2e8;
+  border-top: 1px solid #cfdeea;
 }
 
 .section h2 {
   margin: 0 0 22px;
-  color: #111;
+  color: #0d1b2a;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 38px;
 }
 
 .section > p:not(.section-label) {
   max-width: 760px;
   margin: 0 0 16px;
-  color: #555;
+  color: #425466;
   line-height: 1.7;
 }
 
@@ -198,22 +210,23 @@ a:focus-visible {
 .skill,
 .project {
   padding: 24px;
-  border: 1px solid #dce2e8;
-  border-radius: 8px;
-  background: #fff;
+  border: 1px solid #cfdeea;
+  border-radius: 4px;
+  background: #ffffff;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
 .skill h3,
 .project h3 {
   margin: 0 0 10px;
+  color: #0d1b2a;
   font-size: 18px;
 }
 
 .skill p,
 .project p {
   margin: 0;
-  color: #555;
+  color: #425466;
   line-height: 1.6;
 }
 
@@ -226,22 +239,27 @@ a:focus-visible {
 .project span {
   margin-top: auto;
   padding-top: 24px;
-  color: #1769aa;
+  color: #1261a0;
   font-size: 13px;
 }
 
 .skill:hover,
 .project:hover {
-  border-color: #9bbfd8;
-  box-shadow: 0 8px 20px rgba(23, 105, 170, 0.1);
+  border-color: #79add0;
+  box-shadow: 0 10px 24px rgba(13, 43, 72, 0.1);
   transform: translateY(-2px);
 }
 
 .contact {
   max-width: none;
-  border-top: 1px solid #dce2e8;
-  background: #fafdff;
+  border-top: 1px solid #cfdeea;
+  background: #0d1b2a;
   text-align: center;
+}
+
+.contact h2,
+.contact > p:not(.section-label) {
+  color: #f7fbff;
 }
 
 .contact > p:not(.section-label) {
@@ -257,23 +275,27 @@ a:focus-visible {
 }
 
 .contact-links a {
-  padding: 9px 13px;
-  border: 1px solid #b8d0e1;
-  border-radius: 6px;
-  color: #1769aa;
+  min-width: 92px;
+  padding: 11px 16px;
+  border: 1px solid #79add0;
+  border-radius: 4px;
+  color: #f7fbff;
   font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .contact-links a:hover {
-  background: #eef6fb;
-  text-decoration: underline;
+  border-color: #b8d2e5;
+  background: #1261a0;
+  transform: translateY(-2px);
 }
 
 footer {
   padding: 24px 8%;
-  background: #222;
-  color: #fff;
+  background: #07111c;
+  color: #b8d2e5;
   font-size: 13px;
   text-align: center;
 }
@@ -284,8 +306,7 @@ footer p {
 
 @media (max-width: 720px) {
   .navbar {
-    align-items: flex-start;
-    padding: 16px 6%;
+    padding: 12px 6%;
   }
 
   .navbar nav {
@@ -300,7 +321,7 @@ footer p {
   }
 
   .hero {
-    padding: 76px 6% 68px;
+    padding: 82px 6% 72px;
   }
 
   .hero h2 {
@@ -308,7 +329,9 @@ footer p {
   }
 
   .hero h3 {
+    max-width: 320px;
     font-size: 20px;
+    line-height: 1.35;
   }
 
   .buttons {
@@ -333,7 +356,7 @@ footer p {
   }
 
   .section {
-    padding: 68px 6%;
+    padding: 72px 6%;
   }
 
   .section h2 {
@@ -351,6 +374,11 @@ footer p {
 
   .contact-links {
     flex-direction: column;
+    align-items: stretch;
     gap: 14px;
+  }
+
+  .contact-links a {
+    width: 100%;
   }
 }

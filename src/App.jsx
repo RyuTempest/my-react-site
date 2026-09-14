@@ -159,6 +159,7 @@ function App() {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=avilaryrafael8@gmail.com&su=Hello%20Ray"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Open Gmail compose window"
           >
             Email
           </a>
