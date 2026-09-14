@@ -155,7 +155,11 @@ function App() {
         </p>
 
         <div className="contact-links">
-          <a href="mailto:avilarayrafael8@gmail.com?subject=Hello%20Ray">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=avilaryrafael8@gmail.com&su=Hello%20Ray"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Email
           </a>
 
