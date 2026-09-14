@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 72px;
 }
 
 body {
@@ -25,6 +26,7 @@ a:focus-visible {
 
 .profile {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .navbar {
@@ -38,6 +40,7 @@ a:focus-visible {
   background: rgba(247, 251, 255, 0.95);
   box-shadow: 0 4px 18px rgba(13, 43, 72, 0.08);
   backdrop-filter: blur(8px);
+  animation: nav-in 500ms ease both;
 }
 
 .navbar nav {
@@ -72,6 +75,7 @@ a:focus-visible {
 
 .hero > div {
   max-width: 720px;
+  animation: rise-in 700ms 100ms ease both;
 }
 
 .small-text,
@@ -160,6 +164,11 @@ a:focus-visible {
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
+.button:active,
+.contact-links a:active {
+  transform: translateY(0) scale(0.98);
+}
+
 .button:hover {
   border-color: #0b4778;
   background: #0b4778;
@@ -179,6 +188,7 @@ a:focus-visible {
   max-width: 1100px;
   margin: 0 auto;
   padding: 96px max(6%, 40px);
+  animation: rise-in 700ms ease both;
 }
 
 .section + .section {
@@ -214,6 +224,32 @@ a:focus-visible {
   border-radius: 4px;
   background: #ffffff;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  animation: rise-in 600ms ease both;
+}
+
+.skill:nth-child(2),
+.project:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.skill:nth-child(3),
+.project:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.skill:nth-child(4),
+.project:nth-child(4) {
+  animation-delay: 240ms;
+}
+
+.skill:nth-child(5),
+.project:nth-child(5) {
+  animation-delay: 320ms;
+}
+
+.skill:nth-child(6),
+.project:nth-child(6) {
+  animation-delay: 400ms;
 }
 
 .skill h3,
@@ -304,28 +340,54 @@ footer p {
   margin: 0;
 }
 
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 720px) {
   .navbar {
-    padding: 12px 6%;
+    padding: 10px 5%;
   }
 
   .navbar nav {
+    width: 100%;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 8px 14px;
-    max-width: 210px;
+    gap: 4px 6px;
+    max-width: none;
   }
 
   .navbar nav a {
+    padding: 8px 7px;
     font-size: 13px;
   }
 
   .hero {
-    padding: 82px 6% 72px;
+    padding: 72px 6% 64px;
   }
 
   .hero h2 {
-    font-size: clamp(48px, 16vw, 76px);
+    font-size: clamp(42px, 14vw, 64px);
   }
 
   .hero h3 {
@@ -336,7 +398,12 @@ footer p {
 
   .buttons {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
   }
 
   .hero-details {
@@ -356,16 +423,24 @@ footer p {
   }
 
   .section {
-    padding: 72px 6%;
+    padding: 64px 6%;
   }
 
   .section h2 {
-    font-size: 32px;
+    font-size: 30px;
+    line-height: 1.15;
   }
 
   .skills,
   .projects {
     grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .skill,
+  .project {
+    padding: 20px;
   }
 
   .project {
@@ -380,5 +455,19 @@ footer p {
 
   .contact-links a {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
